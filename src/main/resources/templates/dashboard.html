@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+<h1>Welcome to the Dashboard!</h1>
+
+<!-- Display the success message if present -->
+<p th:text="${message}"></p>
+
+<!-- Store token in localStorage after successful login -->
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var token = [[${token}]];
+    if (token) {
+        localStorage.setItem('authToken', token);  // Store token in localStorage
+    }
+    /*]]>*/
+</script>
+
+</body>
+</html>
